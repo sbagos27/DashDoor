@@ -1,6 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <TextView
+        android:id="@+id/signUpTextView"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_margin="16dp"
+        android:layout_marginBottom="24dp"
+        android:gravity="center"
+        android:text="Sign up:"
+        android:textSize="42sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/firstNameTextEdit"
+        android:layout_width="match_parent"
+        android:layout_height="85dp"
+        android:autofillHints="Please enter your firstname"
+        android:gravity="center"
+        android:hint="first-name: "
+        android:inputType="text"
+        android:textSize="24sp"
+        android:layout_margin="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/signUpTextView" />
+    <EditText
+        android:id="@+id/lastNameTextEdit"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:autofillHints="Please enter your lastname"
+        android:gravity="center"
+        android:hint="last-name: "
+        android:textSize="24sp"
+        android:inputType=""
+        android:layout_margin="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/firstNameTextEdit" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
