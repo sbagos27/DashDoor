@@ -13,7 +13,7 @@
         android:layout_marginBottom="24dp"
         android:gravity="center"
         android:text="Sign up:"
-        android:textSize="42sp"
+        android:textSize="50sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -21,7 +21,7 @@
     <EditText
         android:id="@+id/firstNameTextEdit"
         android:layout_width="match_parent"
-        android:layout_height="85dp"
+        android:layout_height="75dp"
         android:autofillHints="Please enter your firstname"
         android:gravity="center"
         android:hint="first-name: "
@@ -35,7 +35,7 @@
         android:id="@+id/lastNameTextEdit"
         android:layout_width="match_parent"
         android:layout_height="75dp"
-        android:autofillHints="Please enter your lastname"
+        android:autofillHints="Type your lastname"
         android:gravity="center"
         android:hint="last-name: "
         android:textSize="24sp"
@@ -44,6 +44,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/firstNameTextEdit" />
+    <EditText
+        android:id="@+id/paymentTextEdit"
+        android:layout_width="match_parent"
+        android:layout_height="85dp"
+        android:autofillHints="Enter your phone-number"
+        android:gravity="center"
+        android:hint="phone-number: "
+        android:inputType="number"
+        android:textSize="24sp"
+        android:layout_margin="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lastNameTextEdit" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/submitButton"
@@ -56,7 +69,7 @@
         android:backgroundTint="@android:color/holo_green_dark"
         app:iconGravity="textStart"
         app:iconPadding="16dp"
-        app:layout_constraintTop_toBottomOf="@+id/lastNameTextEdit"
+        app:layout_constraintTop_toBottomOf="@+id/paymentTextEdit"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
