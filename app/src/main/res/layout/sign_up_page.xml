@@ -19,12 +19,12 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/firstNameTextEdit"
+        android:id="@+id/nameTextEdit"
         android:layout_width="match_parent"
         android:layout_height="75dp"
-        android:autofillHints="Please enter your firstname"
+        android:autofillHints="Please enter your name:"
         android:gravity="center"
-        android:hint="first-name: "
+        android:hint="name: "
         android:inputType="text"
         android:textSize="24sp"
         android:layout_margin="16dp"
@@ -32,31 +32,31 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/signUpTextView" />
     <EditText
-        android:id="@+id/lastNameTextEdit"
+        android:id="@+id/usernameTextEdit"
         android:layout_width="match_parent"
         android:layout_height="75dp"
-        android:autofillHints="Type your lastname"
+        android:autofillHints="Type your username"
         android:gravity="center"
-        android:hint="last-name: "
+        android:hint="username: "
         android:textSize="24sp"
         android:inputType=""
         android:layout_margin="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/firstNameTextEdit" />
+        app:layout_constraintTop_toBottomOf="@+id/nameTextEdit" />
     <EditText
-        android:id="@+id/paymentTextEdit"
+        android:id="@+id/emailTextEdit"
         android:layout_width="match_parent"
         android:layout_height="85dp"
-        android:autofillHints="Enter your phone-number"
+        android:autofillHints="Enter your Email"
         android:gravity="center"
-        android:hint="phone-number: "
-        android:inputType="number"
+        android:hint="Email"
+        android:inputType="text"
         android:textSize="24sp"
         android:layout_margin="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lastNameTextEdit" />
+        app:layout_constraintTop_toBottomOf="@+id/usernameTextEdit" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/submitButton"
@@ -69,7 +69,7 @@
         android:backgroundTint="@android:color/holo_green_dark"
         app:iconGravity="textStart"
         app:iconPadding="16dp"
-        app:layout_constraintTop_toBottomOf="@+id/paymentTextEdit"
+        app:layout_constraintTop_toBottomOf="@+id/emailTextEdit"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
