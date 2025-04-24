@@ -1,23 +1,34 @@
-package com.example.dashdoor;
+package com.example.DashDoor.database;
 
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
-import androidx.room.Update;
+import androidx.room.Query;
+
+import com.example.DashDoor.database.entities.User;
+
+import java.util.List;
 
 @Dao
-public interface DAO {
+public interface UserDAO {
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insert(User... user);
+
     @Delete
     void delete(User user);
 
-    @Update
-    void update(User user);
-    LiveData<User> getUserByUsername(String username);
+    @Query("SELECT * FROM " + DashDoorDatabase.USER_TABLE + " ORDER BY username")
+    LiveData<List<User>> getAllUsers();
 
-    LiveData<User> getUserById(int id);
+    @Query("DELETE from " + DashDoorDatabase.USER_TABLE)
+    void deleteAll();
+
+    @Query("SELECT * from " + DashDoorDatabase.USER_TABLE + " WHERE username == :username")
+    LiveData<User> getUserByUserName(String username);
+
+    @Query("SELECT * from " + DashDoorDatabase.USER_TABLE + " WHERE id == :userId")
+    LiveData<User> getUserByUserId(int userId);
 }
-
