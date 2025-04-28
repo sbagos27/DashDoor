@@ -1,5 +1,6 @@
 package com.example.DashDoor.database;
 
+
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Delete;
@@ -10,6 +11,8 @@ import androidx.room.Query;
 import com.example.DashDoor.database.entities.User;
 
 import java.util.List;
+
+import com.example.dashdoor.User;
 
 @Dao
 public interface UserDAO {
