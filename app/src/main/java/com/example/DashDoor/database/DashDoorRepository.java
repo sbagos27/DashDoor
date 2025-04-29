@@ -65,7 +65,7 @@ public class DashDoorRepository {
         return null;
     }
 
-    public void insertGymLog(DashDoor dashDoor) {
+    public void insertDashDoor(DashDoor dashDoor) {
         DashDoorDatabase.databaseWriteExecutor.execute(() -> {
             dashDoorDAO.insert(dashDoor);
         });
