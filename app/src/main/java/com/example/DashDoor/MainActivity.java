@@ -28,14 +28,17 @@ import java.util.ArrayList;
 //TESTING IF IT CHANGES
 
 public class MainActivity extends AppCompatActivity {
-    private static final String MAIN_ACTIVITY_USER_ID = "com.example.hw04_dashdoor_v300.MAIN_ACTIVITY_USER_ID";
-    static final String SHARED_PREFERENCE_USERID_KEY = "com.example.hw04_dashdoor_v300.SHARED_PREFERENCE_USERID_KEY";
-    static final String SHARED_PREFERENCE_USERID_VALUE = "com.example.hw04_dashdoor_v300.SHARED_PREFERENCE_USERID_VALUE";
+    private static final String MAIN_ACTIVITY_USER_ID = "com.example.DashDoor.MAIN_ACTIVITY_USER_ID";
+    static final String SHARED_PREFERENCE_USERID_KEY = "com.example.DashDoor.SHARED_PREFERENCE_USERID_KEY";
+    static final String SHARED_PREFERENCE_USERID_VALUE = "com.example.DashDoor.SHARED_PREFERENCE_USERID_VALUE";
+
     private static final int LOGGED_OUT = -1;
     private ActivityMainBinding binding;
     private DashDoorRepository repository;
 
-    public static final String TAG = "DAC_DASHDOOR";
+
+    public static final String TAG = "DAC_DashDoor";
+
     String mExercise = "";
     double mWeight = 0.0;
     int mReps = 0;
@@ -79,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 getInformationFromDisplay();
-                insertGymLogRecord();
+                insertDashDoorRecord();
                 updateDisplay();
             }
         });
@@ -187,12 +190,12 @@ public class MainActivity extends AppCompatActivity {
         return intent;
     }
 
-    private void insertGymLogRecord() {
+    private void insertDashDoorRecord() {
         if (mExercise.isEmpty()) {
             return;
         }
         DashDoor log = new DashDoor(mExercise, mWeight, mReps, loggedInUserId);
-        repository.insertGymLog(log);
+        repository.insertDashDoor(log);
     }
 
     private void updateDisplay() {

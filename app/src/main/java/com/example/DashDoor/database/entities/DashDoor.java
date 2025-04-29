@@ -9,7 +9,7 @@ import com.example.DashDoor.database.DashDoorDatabase;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
-@Entity(tableName = DashDoorDatabase.GYM_LOG_TABLE)
+@Entity(tableName = DashDoorDatabase.DASH_DOOR_TABLE)
 public class DashDoor {
     @PrimaryKey(autoGenerate = true)
     private int id;

@@ -23,7 +23,7 @@ public class DashDoorRepository {
 
     private DashDoorRepository(Application application) {
         DashDoorDatabase db = DashDoorDatabase.getDatabase(application);
-        this.dashDoorDAO = db.gymLogDAO();
+        this.dashDoorDAO = db.dashDoorDAO();
         this.userDao = db.userDAO();
         this.allLogs = (ArrayList<DashDoor>) this.dashDoorDAO.getAllRecords();
     }
@@ -65,7 +65,7 @@ public class DashDoorRepository {
         return null;
     }
 
-    public void insertGymLog(DashDoor dashDoor) {
+    public void insertDashDoor(DashDoor dashDoor) {
         DashDoorDatabase.databaseWriteExecutor.execute(() -> {
             dashDoorDAO.insert(dashDoor);
         });
