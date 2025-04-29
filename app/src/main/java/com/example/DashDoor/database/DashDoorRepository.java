@@ -23,7 +23,7 @@ public class DashDoorRepository {
 
     private DashDoorRepository(Application application) {
         DashDoorDatabase db = DashDoorDatabase.getDatabase(application);
-        this.dashDoorDAO = db.gymLogDAO();
+        this.dashDoorDAO = db.dashDoorDAO();
         this.userDao = db.userDAO();
         this.allLogs = (ArrayList<DashDoor>) this.dashDoorDAO.getAllRecords();
     }

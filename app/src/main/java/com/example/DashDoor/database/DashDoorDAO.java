@@ -16,6 +16,6 @@ public interface DashDoorDAO {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insert(DashDoor dashDoor);
 
-    @Query("SELECT * FROM " + DashDoorDatabase.GYM_LOG_TABLE + " ORDER BY date DESC")
+    @Query("SELECT * FROM " + DashDoorDatabase.DASH_DOOR_TABLE + " ORDER BY date DESC")
     List<DashDoor> getAllRecords();
 }
