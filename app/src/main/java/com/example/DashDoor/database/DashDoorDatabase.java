@@ -24,6 +24,7 @@ public abstract class DashDoorDatabase extends RoomDatabase {
 
 
     public static final String USER_TABLE = "usertable";
+
     private static final String DATABASE_NAME = "DashDoorDatabase";
     public static final String DASH_DOOR_TABLE = "dashDoorTable";
 

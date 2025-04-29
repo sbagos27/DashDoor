@@ -31,11 +31,14 @@ public class MainActivity extends AppCompatActivity {
     private static final String MAIN_ACTIVITY_USER_ID = "com.example.DashDoor.MAIN_ACTIVITY_USER_ID";
     static final String SHARED_PREFERENCE_USERID_KEY = "com.example.DashDoor.SHARED_PREFERENCE_USERID_KEY";
     static final String SHARED_PREFERENCE_USERID_VALUE = "com.example.DashDoor.SHARED_PREFERENCE_USERID_VALUE";
+
     private static final int LOGGED_OUT = -1;
     private ActivityMainBinding binding;
     private DashDoorRepository repository;
 
+
     public static final String TAG = "DAC_DashDoor";
+
     String mExercise = "";
     double mWeight = 0.0;
     int mReps = 0;

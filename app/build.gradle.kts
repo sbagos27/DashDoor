@@ -7,7 +7,7 @@ android {
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.example.hw04_gymlog_v300"
+        applicationId = "com.example.hw04_DashDoor_v300"
         minSdk = 34
         targetSdk = 35
         versionCode = 1
