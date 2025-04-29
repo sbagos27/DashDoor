@@ -5,15 +5,122 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#000000"
     tools:context=".MainActivity">
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/logDisplayTextView"
+        android:layout_width="390dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="16dip"
+        android:padding="8dp"
+        android:text="What Sounds Good Today?"
+        android:textColor="#39FF14"
+        android:textSize="28sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/exerciseLabelTextView"
+        android:layout_width="100dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text="Location"
+        android:textColor="#39FF14"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logDisplayTextView" />
+
+    <EditText
+        android:id="@+id/exerciseInputEditText"
+        android:layout_width="274dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="8dp"
+        android:hint="Enter a location"
+        android:inputType="textAutoComplete"
+        android:padding="8dp"
+        android:textColor="#39FF14"
+        android:textColorHint="#66FF66"
+        android:background="#6600FF00"
+        app:layout_constraintBaseline_toBaselineOf="@+id/exerciseLabelTextView"
+        app:layout_constraintStart_toEndOf="@+id/exerciseLabelTextView" />
+
+    <TextView
+        android:id="@+id/weightLabelTextView"
+        android:layout_width="100dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="16dip"
+        android:layout_marginTop="8dp"
+        android:text="Food Type"
+        android:textColor="#39FF14"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/exerciseLabelTextView" />
+
+    <EditText
+        android:id="@+id/weightInputEditText"
+        android:layout_width="273dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="8dp"
+        android:hint="Enter a type of food"
+        android:inputType="textAutoComplete"
+        android:padding="8dp"
+        android:textColor="#39FF14"
+        android:textColorHint="#66FF66"
+        android:background="#6600FF00"
+        app:layout_constraintBaseline_toBaselineOf="@+id/weightLabelTextView"
+        app:layout_constraintStart_toEndOf="@+id/weightLabelTextView" />
+
+    <TextView
+        android:id="@+id/repLabelTextView"
+        android:layout_width="100dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="16dip"
+        android:layout_marginTop="8dp"
+        android:text=""
+        android:textColor="#39FF14"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/weightLabelTextView" />
+
+    <EditText
+        android:id="@+id/repInputEditText"
+        android:layout_width="273dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="8dp"
+        android:inputType="number"
+        android:padding="8dp"
+        android:textColor="#39FF14"
+        app:layout_constraintBaseline_toBaselineOf="@+id/repLabelTextView"
+        app:layout_constraintStart_toEndOf="@+id/repLabelTextView" />
+
+    <Button
+        android:id="@+id/logButton"
+        android:layout_width="390dp"
+        android:layout_height="125dp"
+        android:layout_marginTop="16dp"
+        android:text="Search"
+        android:textSize="36sp"
+        android:textColor="#39FF14"
+        android:background="#222222"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/repInputEditText" />
+
+    <Button
+        android:id="@+id/adminOnlyButton"
+        android:layout_width="390dp"
+        android:layout_height="125dp"
+        android:layout_marginTop="8dp"
+        android:text="Admin Action"
+        android:textSize="36sp"
+        android:textColor="#39FF14"
+        android:background="#222222"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logButton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

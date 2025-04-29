@@ -1,4 +1,4 @@
-package com.example.dashdoor;
+package com.example.DashDoor;
 
 import org.junit.Test;
 

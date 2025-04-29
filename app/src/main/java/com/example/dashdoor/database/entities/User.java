@@ -1,14 +1,20 @@
-package com.example.dashdoor;
+package com.example.DashDoor.database.entities;
 
-import java.util.Objects;
+import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import com.example.DashDoor.database.DashDoorDatabase;
+
+import java.util.Objects;
+
+@Entity(tableName = DashDoorDatabase.USER_TABLE)
 public class User {
     @PrimaryKey(autoGenerate = true)
     private int id;
     private String username;
     private String password;
     private boolean isAdmin;
+
     public User(String username, String password) {
         this.username = username;
         this.password = password;
@@ -19,8 +25,7 @@ public class User {
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         User user = (User) o;
-        return id == user.id && isAdmin == user.isAdmin &&
-                Objects.equals(username, user.username) && Objects.equals(password, user.password);
+        return id == user.id && isAdmin == user.isAdmin && Objects.equals(username, user.username) && Objects.equals(password, user.password);
     }
 
     @Override
@@ -28,12 +33,20 @@ public class User {
         return Objects.hash(id, username, password, isAdmin);
     }
 
-    public boolean isAdmin() {
-        return isAdmin;
+    public int getId() {
+        return id;
     }
 
-    public void setAdmin(boolean admin) {
-        isAdmin = admin;
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {
@@ -44,11 +57,11 @@ public class User {
         this.password = password;
     }
 
-    public int getId() {
-        return id;
+    public boolean isAdmin() {
+        return isAdmin;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setAdmin(boolean admin) {
+        isAdmin = admin;
     }
 }
