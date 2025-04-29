@@ -1,6 +1,16 @@
 <resources>
     <string name="app_name">DashDoor</string>
-    <string name="welcome_to_dashdoor">Welcome to DashDoor!</string>
-    <string name="logout">Logout</string>
-    <string name="admin_things">Admin Things</string>
+    <string name="exercise">Exercise</string>
+    <string name="enter_an_exercise">Enter an Exercise</string>
+    <string name="weight">Weight</string>
+    <string name="enter_a_weight">Enter a weight</string>
+    <string name="enter_reps">Enter Reps</string>
+    <string name="reps">Reps</string>
+    <string name="weight_lb">Weight(lb)</string>
+    <string name="log">Log</string>
+    <string name="nothing_to_show_time_to_hit_the_gym">Nothing to show, time to hit the gym</string>
+    <string name="welcome_to_the_gymlog_nplease_sign_in">Welcome to the GymLog.\nPlease Sign in.</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login">Login!</string>
 </resources>
