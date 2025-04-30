@@ -29,7 +29,6 @@
         android:autofillHints="Please enter your name:"
         android:gravity="center"
         android:hint="name: "
-
         android:inputType="text"
         android:textColorHint="#66FF66"
         android:textSize="24sp"
@@ -38,19 +37,34 @@
         app:layout_constraintTop_toBottomOf="@+id/signUpTextView" />
 
     <EditText
-        android:id="@+id/usernameTextEdit"
+        android:id="@+id/emailTextEdit"
         android:layout_width="match_parent"
         android:layout_height="75dp"
         android:layout_margin="16dp"
         android:autofillHints="Type your username"
         android:gravity="center"
-        android:hint="username: "
-        android:inputType=""
+        android:hint="email: "
+        android:inputType="text"
         android:textColorHint="#66FF66"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nameTextEdit" />
+
+    <EditText
+        android:id="@+id/usernameTextEdit"
+        android:layout_width="match_parent"
+        android:layout_height="85dp"
+        android:layout_margin="16dp"
+        android:autofillHints="Enter your Email"
+        android:gravity="center"
+        android:hint="@string/username"
+        android:inputType="text"
+        android:textColorHint="#66FF66"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/emailTextEdit" />
 
     <EditText
         android:id="@+id/passwordTextEdit"
@@ -59,28 +73,13 @@
         android:layout_margin="16dp"
         android:autofillHints="Enter your Email"
         android:gravity="center"
-        android:hint="password"
+        android:hint="@string/password"
         android:inputType="text"
         android:textColorHint="#66FF66"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/usernameTextEdit" />
-
-    <EditText
-        android:id="@+id/emailTextEdit"
-        android:layout_width="match_parent"
-        android:layout_height="85dp"
-        android:layout_margin="16dp"
-        android:autofillHints="Enter your Email"
-        android:gravity="center"
-        android:hint="Email"
-        android:inputType="text"
-        android:textColorHint="#66FF66"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passwordTextEdit" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/submitButton"
@@ -95,7 +94,7 @@
         app:iconPadding="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/emailTextEdit" />
+        app:layout_constraintTop_toBottomOf="@+id/passwordTextEdit" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
