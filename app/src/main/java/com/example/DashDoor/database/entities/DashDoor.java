@@ -31,7 +31,9 @@ public class DashDoor {
         this.userId = userId;
     }
 
-    public DashDoor(String mLocation, double mFoodType, int mCost, int loggedInUserId) {
+
+
+    public DashDoor(String mLocation, String mFoodType, double mCost, int loggedInUserId) {
     }
 
     @NonNull

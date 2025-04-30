@@ -40,8 +40,8 @@ public class MainActivity extends AppCompatActivity {
     public static final String TAG = "DAC_DashDoor";
 
     String mLocation = "";
-    double mFoodType = 0.0;
-    int mCost = 0;
+    String mFoodType = "";
+    double mCost = 0;
 
     private int loggedInUserId = -1;
     private User user;
@@ -212,7 +212,7 @@ public class MainActivity extends AppCompatActivity {
     private void getInformationFromDisplay() {
         mLocation = binding.LocationInputEditText.getText().toString();
         try {
-            mFoodType = Double.parseDouble(binding.FoodTypeInputEditText.getText().toString());
+            mFoodType = String.valueOf(Double.parseDouble(binding.FoodTypeInputEditText.getText().toString()));
         } catch (NumberFormatException e) {
             Log.d(TAG, "Error reading value from FoodType Edit Text.");
         }
