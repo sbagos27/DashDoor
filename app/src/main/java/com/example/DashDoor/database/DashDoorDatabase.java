@@ -18,6 +18,7 @@ import com.example.DashDoor.database.typeConverters.LocalDateTypeConverter;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+
 @TypeConverters(LocalDateTypeConverter.class)
 @Database(entities = {DashDoor.class, User.class}, version = 1, exportSchema = false)
 public abstract class DashDoorDatabase extends RoomDatabase {

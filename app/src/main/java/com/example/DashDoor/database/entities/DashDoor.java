@@ -13,26 +13,33 @@ import java.util.Objects;
 public class DashDoor {
     @PrimaryKey(autoGenerate = true)
     private int id;
-    private String exercise;
-    private double weight;
-    private int reps;
+    private String location;
+    private String foodType;
+    private double cost;
     private LocalDateTime date;
     private int userId;
 
-    public DashDoor(String exercise, double weight, int reps, int userId) {
-        this.exercise = exercise;
-        this.weight = weight;
-        this.reps = reps;
+    // Empty constructor required by Room
+    public DashDoor() {}
+
+    // Constructor matching all fields (except id, which is auto-generated)
+    public DashDoor(String location, String foodType, double cost, LocalDateTime date, int userId) {
+        this.location = location;
+        this.foodType = foodType;
+        this.cost = cost;
+        this.date = date;
         this.userId = userId;
-        date = LocalDateTime.now();
+    }
+
+    public DashDoor(String mLocation, double mFoodType, int mCost, int loggedInUserId) {
     }
 
     @NonNull
     @Override
     public String toString() {
-        return  exercise + '\n' +
-                "weight: " + weight + '\n' +
-                "reps: " + reps + '\n' +
+        return  location + '\n' +
+                "foodType: " + foodType + '\n' +
+                "cost: " + cost + '\n' +
                 "date: " + date.toString() + '\n' +
                 "=-=-=-=-=-=-=-=-=-=" + '\n';
     }
@@ -41,59 +48,36 @@ public class DashDoor {
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         DashDoor log = (DashDoor) o;
-        return id == log.id && Double.compare(weight, log.weight) == 0 && reps == log.reps && userId == log.userId && Objects.equals(exercise, log.exercise) && Objects.equals(date, log.date);
+        return id == log.id &&
+                Objects.equals(foodType, log.foodType) &&
+                cost == log.cost &&
+                userId == log.userId &&
+                Objects.equals(location, log.location) &&
+                Objects.equals(date, log.date);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, exercise, weight, reps, date, userId);
+        return Objects.hash(id, location, foodType, cost, date, userId);
     }
 
-    public int getId() {
-        return id;
-    }
+    // Getters and setters
 
-    public void setId(int id) {
-        this.id = id;
-    }
+    public int getId() { return id; }
+    public void setId(int id) { this.id = id; }
 
-    public String getExercise() {
-        return exercise;
-    }
+    public String getLocation() { return location; }
+    public void setLocation(String location) { this.location = location; }
 
-    public void setExercise(String exercise) {
-        this.exercise = exercise;
-    }
+    public String getFoodType() { return foodType; }
+    public void setFoodType(String foodType) { this.foodType = foodType; }
 
-    public double getWeight() {
-        return weight;
-    }
+    public double getCost() { return cost; }
+    public void setCost(double cost) { this.cost = cost; }
 
-    public void setWeight(double weight) {
-        this.weight = weight;
-    }
+    public LocalDateTime getDate() { return date; }
+    public void setDate(LocalDateTime date) { this.date = date; }
 
-    public int getReps() {
-        return reps;
-    }
-
-    public void setReps(int reps) {
-        this.reps = reps;
-    }
-
-    public LocalDateTime getDate() {
-        return date;
-    }
-
-    public void setDate(LocalDateTime date) {
-        this.date = date;
-    }
-
-    public int getUserId() {
-        return userId;
-    }
-
-    public void setUserId(int userId) {
-        this.userId = userId;
-    }
+    public int getUserId() { return userId; }
+    public void setUserId(int userId) { this.userId = userId; }
 }

@@ -39,9 +39,9 @@ public class MainActivity extends AppCompatActivity {
 
     public static final String TAG = "DAC_DashDoor";
 
-    String mExercise = "";
-    double mWeight = 0.0;
-    int mReps = 0;
+    String mLocation = "";
+    double mFoodType = 0.0;
+    int mCost = 0;
 
     private int loggedInUserId = -1;
     private User user;
@@ -86,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
                 updateDisplay();
             }
         });
-        binding.exerciseInputEditText.setOnClickListener(new View.OnClickListener() {
+        binding.LocationInputEditText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 updateDisplay();
@@ -173,7 +173,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void logout() {
-        //TODO: make logout functional
         SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences(SHARED_PREFERENCE_USERID_KEY, Context.MODE_PRIVATE);
         SharedPreferences.Editor sharedPrefEditor = sharedPreferences.edit();
         sharedPrefEditor.putInt(SHARED_PREFERENCE_USERID_KEY, LOGGED_OUT);
@@ -191,17 +190,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void insertDashDoorRecord() {
-        if (mExercise.isEmpty()) {
+        if (mLocation.isEmpty()) {
             return;
         }
-        DashDoor log = new DashDoor(mExercise, mWeight, mReps, loggedInUserId);
+        DashDoor log = new DashDoor(mLocation, mFoodType, mCost, loggedInUserId);
         repository.insertDashDoor(log);
     }
 
     private void updateDisplay() {
         ArrayList<DashDoor> allLogs = repository.getAllLogs();
         if (allLogs.isEmpty()) {
-            binding.logDisplayTextView.setText(R.string.nothing_to_show_time_to_hit_the_gym);
+            binding.logDisplayTextView.setText(R.string.nothing_to_show_time_to_eat);
         }
         StringBuilder sb = new StringBuilder();
         for (DashDoor log : allLogs) {
@@ -211,17 +210,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void getInformationFromDisplay() {
-        mExercise = binding.exerciseInputEditText.getText().toString();
+        mLocation = binding.LocationInputEditText.getText().toString();
         try {
-            mWeight = Double.parseDouble(binding.weightInputEditText.getText().toString());
+            mFoodType = Double.parseDouble(binding.FoodTypeInputEditText.getText().toString());
         } catch (NumberFormatException e) {
-            Log.d(TAG, "Error reading value from Weight Edit Text.");
+            Log.d(TAG, "Error reading value from FoodType Edit Text.");
         }
 
         try {
-            mReps = Integer.parseInt(binding.repInputEditText.getText().toString());
+            mCost = Integer.parseInt(binding.costInputEditText.getText().toString());
         } catch (NumberFormatException e) {
-            Log.d(TAG, "Error reading value from reps Edit Text.");
+            Log.d(TAG, "Error reading value from cost Edit Text.");
         }
     }
 }
