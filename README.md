@@ -1,4 +1,5 @@
 DashDoor App
+
 Project 02: DashDoor
 Senen Bagos
 Natalio Maturino
@@ -9,10 +10,6 @@ CST 338 Spring 25, Section 2
 DashDoor
 
 We are going to make a rip-off of DoorDash, “DashDoor.” DoorDash prices are too high, and DashDoor sells at a cheaper price and will definitely be more user friendly. 
-
-Github: https://github.com/sbagos27/DashDoor
-
-
 
 Table of contents
 
@@ -25,10 +22,6 @@ Andre Gutierrez	5
 Natalio Maturino	5
 Rene Gonzalez	5
 User Stories	6
-
-
-
-
 
 Completed Rubric Items
 Please highlight the items you have completed
