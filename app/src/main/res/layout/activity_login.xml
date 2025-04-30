@@ -69,4 +69,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
+    <Button
+        android:id="@+id/adminButton"
+        android:layout_width="match_parent"
+        android:layout_height="105dp"
+        android:layout_margin="16dp"
+        android:layout_marginTop="136dp"
+        android:background="#222222"
+        android:text="@string/admin"
+        android:textColor="#39FF14"
+        android:textSize="32sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loginButton" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

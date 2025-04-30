@@ -17,4 +17,10 @@
     <string name="enter_a_location">Enter a location</string>
     <string name="food_type">Food Type</string>
     <string name="enter_a_type_of_food">Enter a type of food</string>
+    <string name="admin">admin</string>
+    <string name="what_sounds_good_today">What Sounds Good Today?</string>
+    <string name="location">Location</string>
+    <string name="search">Search</string>
+    <string name="admin_action">Admin Action</string>
+    <string name="welcome_admin_user_what_would_you_like_to_do">Welcome Admin User What would you like to do?</string>
 </resources>
