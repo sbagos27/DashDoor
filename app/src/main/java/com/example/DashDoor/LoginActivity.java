@@ -39,7 +39,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private void verifyUser() {
         String username = binding.userNameLoginEditText.getText().toString();
-
+//
         if(username.isEmpty()){
             toastMaker("username should not be blank");
             return;
