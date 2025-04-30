@@ -24,4 +24,7 @@
     <string name="admin_action">Admin Action</string>
     <string name="welcome_admin_user_what_would_you_like_to_do">Welcome Admin User What would you like to do?</string>
     <string name="search_history">search history</string>
+    <string name="view_clients">view clients</string>
+    <string name="self_destruckt">self destruckt</string>
+    <string name="self_destruct">self_destruct</string>
 </resources>
