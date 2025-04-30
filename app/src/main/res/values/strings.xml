@@ -15,4 +15,11 @@
     <string name="login">Login!</string>
     <string name="welcome_to_dash_door_hope_you_are_hungry">Welcome to Dash Door, Hope you are Hungry!</string>
     <string name="enter_a_location">Enter a location</string>
+    <string name="pepperoni_15">Pepperoni: $15</string>
+    <string name="click_to_add_to_cart">Click to Add to Cart!</string>
+    <string name="pizza_time">Pizza Time!</string>
+    <string name="cheese_12">Cheese: $12</string>
+    <string name="meatlovers_12">MeatLovers: $12</string>
+    <string name="click_icon_to_add_to_cart">Click Icon to Add to Cart!</string>
+    <string name="meatlovers_50">meatlovers $50</string>
 </resources>
