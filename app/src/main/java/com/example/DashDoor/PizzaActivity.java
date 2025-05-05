@@ -14,26 +14,16 @@ import android.view.View;
 import android.widget.Button;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.LiveData;
 
+import com.example.DashDoor.database.DashDoorRepository;
+import com.example.DashDoor.database.entities.DashDoor;
+import com.example.DashDoor.database.entities.User;
+import com.example.DashDoor.databinding.ActivityMainBinding;
+public class PizzaActivity {
 
-import com.example.DashDoor.databinding.PizzaPlaceBinding;
-public class PizzaActivity extends AppCompatActivity{
-
-    private PizzaPlaceBinding pizzaBinding;
-
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        pizzaBinding = PizzaPlaceBinding.inflate(getLayoutInflater());
-        setContentView(pizzaBinding.getRoot());
-
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().setTitle("Pizza Place");
-        }
-    }
 
 
     static Intent pizzaIntentFactory(Context context){
