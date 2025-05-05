@@ -4,6 +4,7 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".BurgerActivity"
+    android:id="@+id/burger_main"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#000000"
     >
