@@ -2,9 +2,6 @@ package com.example.DashDoor;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
-import android.view.View;
-import android.widget.RadioButton;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -15,6 +12,7 @@ import com.example.DashDoor.databinding.OrderPageBinding;
 public class OrderPageActivity extends AppCompatActivity {
 
     private OrderPageBinding orderPageBinding;
+    private String selectedFoodType = null;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -26,50 +24,33 @@ public class OrderPageActivity extends AppCompatActivity {
             getSupportActionBar().setTitle("Order Page");
         }
 
-        orderPageBinding.placeOrderButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View viewPlaceOrderBtn) {
-                navigateToCheckout();
+        orderPageBinding.buttonBurger.setOnClickListener(v -> {
+            selectedFoodType = "Burger Place";
+            showToast("Selected: Burger Place");
+        });
+
+        orderPageBinding.buttonPizza.setOnClickListener(v -> {
+            selectedFoodType = "Pizza";
+            showToast("Selected: Pizza");
+        });
+
+        orderPageBinding.placeOrderButton.setOnClickListener(v -> {
+            if (selectedFoodType == null) {
+                showToast("Please select a food type before proceeding.");
+                return;
             }
+            goToCheckoutWithChoice(selectedFoodType);
         });
     }
 
-    private void navigateToCheckout() {
-        int selectedRadioId = orderPageBinding.foodTypeRadioGroup.getCheckedRadioButtonId();
-        if (selectedRadioId == -1) {
-            displayToastMessage("Please select a food type.");
-            return;
-        }
-
-        RadioButton selectedFoodTypeRadio = findViewById(selectedRadioId);
-        String selectedFoodType = selectedFoodTypeRadio.getText().toString();
-
-        String enteredQuantityString = orderPageBinding.quantityEditText.getText().toString().trim();
-        if (TextUtils.isEmpty(enteredQuantityString)) {
-            displayToastMessage("Please enter a choice quantity.");
-            return;
-        }
-
-        int enteredQuantity;
-        try {
-            enteredQuantity = Integer.parseInt(enteredQuantityString);
-            if (enteredQuantity <= 0) {
-                displayToastMessage("Quantity must be greater than zero.");
-                return;
-            }
-        } catch (NumberFormatException e) {
-            displayToastMessage("Invalid quantity.");
-            return;
-        }
-
-        // Pass order details to CheckoutActivity
-        Intent checkoutIntent = new Intent(this, CheckoutActivity.class);
-        checkoutIntent.putExtra("foodType", selectedFoodType);
-        checkoutIntent.putExtra("quantity", enteredQuantity);
-        startActivity(checkoutIntent);
+    private void goToCheckoutWithChoice(String foodType) {
+        Intent intent = new Intent(this, CheckoutActivity.class);
+        intent.putExtra("foodType", foodType);
+        intent.putExtra("quantity", 1); // Default quantity, or add quantity selection in checkout
+        startActivity(intent);
     }
 
-    private void displayToastMessage(String messageToShow) {
-        Toast.makeText(this, messageToShow, Toast.LENGTH_SHORT).show();
+    private void showToast(String message) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 }
