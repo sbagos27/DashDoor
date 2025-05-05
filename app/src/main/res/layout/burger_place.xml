@@ -51,11 +51,24 @@
         android:layout_height="92dp"
         android:layout_marginTop="40dp"
         android:background="#FAC06C"
-        android:text="Fry Fries: $5"
+        android:text="@string/fry_fries_5"
         android:textSize="32sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button3" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="275dp"
+        android:layout_height="92dp"
+        android:layout_marginTop="40dp"
+        android:text="@string/chez_burg_8"
+        android:textSize="32sp"
+        android:background="#E6CD27"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.485"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button4" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

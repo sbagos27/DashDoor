@@ -24,4 +24,9 @@ import com.example.DashDoor.database.entities.User;
 import com.example.DashDoor.databinding.ActivityMainBinding;
 public class PizzaActivity {
 
+
+
+    static Intent pizzaIntentFactory(Context context){
+        return new Intent(context, PizzaActivity.class);
+    }
 }

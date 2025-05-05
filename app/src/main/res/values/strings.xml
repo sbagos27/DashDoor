@@ -23,4 +23,6 @@
     <string name="click_icon_to_add_to_cart">Click Icon to Add to Cart!</string>
     <string name="meatlovers_50">meatlovers $50</string>
     <string name="burger_time">Burger Time!</string>
+    <string name="chez_burg_8">Chez Burg: $8</string>
+    <string name="fry_fries_5">Fry Fries: $5</string>
 </resources>
