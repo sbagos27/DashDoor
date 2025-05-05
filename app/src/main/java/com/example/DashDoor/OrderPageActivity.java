@@ -28,11 +28,15 @@ public class OrderPageActivity extends AppCompatActivity {
         orderPageBinding.buttonBurger.setOnClickListener(v -> {
             selectedFoodType = "Burger Place";
             showToast("Selected: Burger Place");
+            startActivity(BurgerActivity.burgerIntentFactory(getApplicationContext()));
+
         });
 
         orderPageBinding.buttonPizza.setOnClickListener(v -> {
             selectedFoodType = "Pizza";
             showToast("Selected: Pizza");
+            startActivity(PizzaActivity.pizzaIntentFactory(getApplicationContext()));
+
         });
 
         orderPageBinding.placeOrderButton.setOnClickListener(v -> {
