@@ -1,4 +1,6 @@
 package com.example.DashDoor;
 
-public class AdminActivity {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class AdminActivity extends AppCompatActivity {
 }
