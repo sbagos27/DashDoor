@@ -28,7 +28,7 @@ import java.util.ArrayList;
 //TESTING IF IT CHANGES
 
 public class MainActivity extends AppCompatActivity {
-    private static final String MAIN_ACTIVITY_USER_ID = "com.example.DashDoor.MAIN_ACTIVITY_USER_ID";
+    public static final String MAIN_ACTIVITY_USER_ID = "com.example.DashDoor.MAIN_ACTIVITY_USER_ID";
     static final String SHARED_PREFERENCE_USERID_KEY = "com.example.DashDoor.SHARED_PREFERENCE_USERID_KEY";
     static final String SHARED_PREFERENCE_USERID_VALUE = "com.example.DashDoor.SHARED_PREFERENCE_USERID_VALUE";
 

@@ -18,6 +18,10 @@
             android:exported="false"
             />
         <activity
+            android:name=".OrderPageActivity" />
+        <activity
+            android:name=".CheckoutActivity" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

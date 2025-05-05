@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/orderPageLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    tools:context=".OrderPageActivity">
+
+    <TextView
+        android:id="@+id/orderTitleTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Choose Your Food"
+        android:textColor="#39FF14"
+        android:textSize="36sp"
+        android:gravity="center"
+        android:layout_marginTop="32dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <Button
+        android:id="@+id/buttonBurger"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:text="Burger Place"
+        android:textColor="#39FF14"
+        android:background="#222222"
+        android:textSize="28sp"
+        android:layout_marginTop="48dp"
+        app:layout_constraintTop_toBottomOf="@id/orderTitleTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"/>
+
+    <Button
+        android:id="@+id/buttonPizza"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:text="Pizza"
+        android:textColor="#39FF14"
+        android:background="#222222"
+        android:textSize="28sp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toBottomOf="@id/buttonBurger"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"/>
+
+    <Button
+        android:id="@+id/placeOrderButton"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:text="To Checkout"
+        android:textColor="#39FF14"
+        android:background="#222222"
+        android:textSize="28sp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintTop_toBottomOf="@id/buttonPizza"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
