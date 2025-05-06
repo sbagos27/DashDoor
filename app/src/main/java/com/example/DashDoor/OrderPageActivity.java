@@ -26,8 +26,8 @@ public class OrderPageActivity extends AppCompatActivity {
         }
 
         orderPageBinding.buttonBurger.setOnClickListener(v -> {
-            selectedFoodType = "Burger Place";
-            showToast("Selected: Burger Place");
+            Intent intent = new Intent(this, BurgerActivity.class);
+            startActivity(intent);
         });
 
         orderPageBinding.buttonPizza.setOnClickListener(v -> {
