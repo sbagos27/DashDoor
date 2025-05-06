@@ -35,7 +35,7 @@
     <TextView
         android:id="@+id/orderItemsTextView"
         android:layout_width="0dp"
-        android:layout_height="80dp"
+        android:layout_height="200dp"
         android:text="• Burger x1\n• Fries x2\n• Soda x1"
         android:textSize="20sp"
         android:textColor="#66FF66"

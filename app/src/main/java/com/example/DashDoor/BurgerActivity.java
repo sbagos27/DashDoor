@@ -9,15 +9,15 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.DashDoor.databinding.BurgerPlaceBinding;
-import com.example.DashDoor.databinding.PizzaPlaceBinding;
 
 public class BurgerActivity extends AppCompatActivity {
 
     private BurgerPlaceBinding burgerPlaceBinding;
 
-    public void onCreate(@Nullable Bundle savedInstanceState) {
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        burgerPlaceBinding = com.example.DashDoor.databinding.BurgerPlaceBinding.inflate(getLayoutInflater());
+        burgerPlaceBinding = BurgerPlaceBinding.inflate(getLayoutInflater());
         setContentView(burgerPlaceBinding.getRoot());
 
         if (getSupportActionBar() != null) {
@@ -25,24 +25,24 @@ public class BurgerActivity extends AppCompatActivity {
         }
 
         burgerPlaceBinding.button3.setOnClickListener(v -> {
+            Cart.getInstance().addItem("Omega Burger", 13.0, 1);
             showToast("Added Omega Burger to Cart");
         });
 
         burgerPlaceBinding.button4.setOnClickListener(v -> {
+            Cart.getInstance().addItem("Fry Fries", 5.0, 1);
             showToast("Added Fry Fries to Cart");
-
         });
 
         burgerPlaceBinding.button5.setOnClickListener(v -> {
+            Cart.getInstance().addItem("Chez Burger", 8.0, 1);
             showToast("Added Chez Burger to Cart");
-
         });
     }
 
     private void showToast(String message) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
-
 
     static Intent burgerIntentFactory(Context context){
         return new Intent(context, BurgerActivity.class);
