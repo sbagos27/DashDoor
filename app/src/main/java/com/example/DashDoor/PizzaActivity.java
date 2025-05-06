@@ -38,6 +38,18 @@ public class PizzaActivity extends AppCompatActivity{
             getSupportActionBar().setTitle("Pizza Place");
         }
 
+        pizzaPlaceBinding.pepperButton.setOnClickListener(v -> {
+
+        });
+
+        pizzaPlaceBinding.cheeseButton.setOnClickListener(v -> {
+
+        });
+
+        pizzaPlaceBinding.meatloverButton.setOnClickListener(v -> {
+
+        });
+
     }
 
     static Intent pizzaIntentFactory(Context context){
