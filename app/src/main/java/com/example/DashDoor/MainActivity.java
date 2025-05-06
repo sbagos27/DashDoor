@@ -88,12 +88,25 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(OrderPageActivity.orderPageIntentFactory(getApplicationContext()));
             }
         });
+        binding.adminOnlyButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getInformationFromDisplay();
+                insertDashDoorRecord();
+                updateDisplay();
+
+                Intent intent = AdminActivity.adminIntent(getApplicationContext());
+                startActivity(intent);
+            }
+        });
         binding.LocationInputEditText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 updateDisplay();
             }
         });
+
+
 
     }
 

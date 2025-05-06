@@ -12,7 +12,7 @@
         android:id="@+id/burgerHeader"
         android:layout_width="279dp"
         android:layout_height="87dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="108dp"
         android:gravity="center"
         android:text="@string/burger_time"
         android:textColor="#39FF14"

@@ -2,6 +2,7 @@ package com.example.DashDoor;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -69,8 +70,19 @@ public class CheckoutActivity extends AppCompatActivity {
 
         Cart.getInstance().clear(); // Clear the cart after order is placed
 
-        // Optionally, return to the main screen or clear the cart
-        startActivity(MainActivity.mainActivityIntentFactory(this, getLoggedInUserIdFromIntent()));
+        // Go back to the home screen (MainActivity), keeping user logged in
+        int userId = getLoggedInUserIdFromIntent();
+
+        // Save user ID in SharedPreferences so MainActivity sees the user as logged in
+        SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences(
+                MainActivity.SHARED_PREFERENCE_USERID_KEY, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putInt(MainActivity.SHARED_PREFERENCE_USERID_VALUE, userId);
+        editor.apply();
+
+        Intent intent = MainActivity.mainActivityIntentFactory(this, userId);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+        startActivity(intent);
         finish();
     }
 
