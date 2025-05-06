@@ -26,29 +26,31 @@ public class CheckoutActivity extends AppCompatActivity {
             getSupportActionBar().setTitle("Checkout");
         }
 
-        // Retrieve passed order details from Intent
-        Intent checkoutIntent = getIntent();
-        String selectedFoodType = checkoutIntent.getStringExtra("foodType");
-        int selectedQuantity = checkoutIntent.getIntExtra("quantity", 1);
-
-        // Set order summary dynamically
-        String dynamicOrderSummary = "• " + selectedFoodType + " x" + selectedQuantity;
-        checkoutBinding.orderItemsTextView.setText(dynamicOrderSummary);
-
-        // Optionally, set a dynamic price (for demonstration, $10 per item)
-        double dynamicPricePerItem = 10.0;
-        double calculatedTotalPrice = dynamicPricePerItem * selectedQuantity;
-        checkoutBinding.totalPriceTextView.setText("Total: $" + String.format("%.2f", calculatedTotalPrice));
+        // Build order summary from Cart
+        StringBuilder orderSummary = new StringBuilder();
+        double total = 0.0;
+        for (Cart.CartItem cartItem : Cart.getInstance().getItems()) {
+            orderSummary.append("• ")
+                    .append(cartItem.itemName)
+                    .append(" x")
+                    .append(cartItem.itemQuantity)
+                    .append(" ($")
+                    .append(String.format("%.2f", cartItem.itemPrice * cartItem.itemQuantity))
+                    .append(")\n");
+            total += cartItem.itemPrice * cartItem.itemQuantity;
+        }
+        checkoutBinding.orderItemsTextView.setText(orderSummary.toString());
+        checkoutBinding.totalPriceTextView.setText("Total: $" + String.format("%.2f", total));
 
         checkoutBinding.placeOrderButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View placeOrderButtonView) {
-                handlePlaceOrder(selectedFoodType, selectedQuantity, calculatedTotalPrice);
+                handlePlaceOrder();
             }
         });
     }
 
-    private void handlePlaceOrder(String selectedFoodType, int selectedQuantity, double calculatedTotalPrice) {
+    private void handlePlaceOrder() {
         String enteredDeliveryAddress = checkoutBinding.deliveryAddressEditText.getText().toString().trim();
         String enteredPaymentInfo = checkoutBinding.paymentInfoEditText.getText().toString().trim();
 
@@ -63,9 +65,9 @@ public class CheckoutActivity extends AppCompatActivity {
 
         // TODO: Save order to database or send to backend here
 
-        displayToast("Order placed!\n" +
-                selectedFoodType + " x" + selectedQuantity + "\n" +
-                "Total: $" + String.format("%.2f", calculatedTotalPrice));
+        displayToast("Order placed!\nThank you for your purchase!");
+
+        Cart.getInstance().clear(); // Clear the cart after order is placed
 
         // Optionally, return to the main screen or clear the cart
         startActivity(MainActivity.mainActivityIntentFactory(this, getLoggedInUserIdFromIntent()));

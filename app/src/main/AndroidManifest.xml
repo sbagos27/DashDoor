@@ -21,6 +21,8 @@
             android:name=".OrderPageActivity" />
         <activity
             android:name=".CheckoutActivity" />
+        <activity android:name=".PizzaActivity"/>
+        <activity android:name=".BurgerActivity"/>
         <activity
             android:name=".MainActivity"
             android:exported="true">
