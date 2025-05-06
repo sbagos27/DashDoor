@@ -57,7 +57,7 @@ public class ExampleInstrumentedTest {
     }
 
     @Test
-    public void testPizzaButtonLaunchesBurgerActivity() {
+    public void testPizzaButtonLaunchePizzaActivity() {
         ActivityScenario.launch(OrderPageActivity.class);
 
         onView(withId(R.id.buttonPizza)).perform(click());
