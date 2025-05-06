@@ -25,4 +25,8 @@
     <string name="burger_time">Burger Time!</string>
     <string name="chez_burg_8">Chez Burg: $8</string>
     <string name="fry_fries_5">Fry Fries: $5</string>
+    <string name="search_history">search_history</string>
+    <string name="view_clients">view_clients</string>
+    <string name="self_destruct">self_destruct</string>
+    <string name="welcome_admin_user_what_would_you_like_to_do">welcome admin user what would you like to do</string>
 </resources>

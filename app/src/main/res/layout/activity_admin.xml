@@ -8,4 +8,65 @@
     android:background="#000000"
     tools:context=".LoginActivity">
 
+    <TextView
+        android:id="@+id/introTextView"
+        android:layout_width="390dp"
+        android:layout_height="345dp"
+        android:layout_marginTop="10dip"
+        android:padding="39dp"
+        android:text="@string/welcome_admin_user_what_would_you_like_to_do"
+        android:textColor="#39FF14"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/historyButton"
+        android:layout_width="match_parent"
+        android:layout_height="105dp"
+        android:layout_margin="16dp"
+        android:layout_marginTop="136dp"
+        android:background="#222222"
+        android:text="@string/search_history"
+        android:textColor="#0C0D0C"
+        android:textSize="40sp"
+        android:backgroundTint="#20B104"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/introTextView"/>
+
+    <Button
+        android:id="@+id/clientsinfoButton"
+        android:layout_width="match_parent"
+        android:layout_height="105dp"
+        android:layout_margin="16dp"
+        android:layout_marginTop="136dp"
+        android:background="#222222"
+        android:text="@string/view_clients"
+        android:textColor="#0B0F0B"
+        android:textSize="40sp"
+        android:backgroundTint="#20B104"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/historyButton"/>
+
+    <Button
+        android:id="@+id/dontPushButton"
+        android:layout_width="match_parent"
+        android:layout_height="105dp"
+        android:layout_margin="16dp"
+        android:layout_marginTop="136dp"
+        android:background="#222222"
+        android:text="@string/self_destruct"
+        android:textColor="#030503"
+        android:textSize="40sp"
+        android:backgroundTint="#B60F03"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/clientsinfoButton"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
