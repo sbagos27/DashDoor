@@ -36,10 +36,10 @@ public class OrderPageActivity extends AppCompatActivity {
         });
 
         orderPageBinding.placeOrderButton.setOnClickListener(v -> {
-            if (selectedFoodType == null) {
-                showToast("Please select a food type before proceeding.");
-                return;
-            }
+//            if (selectedFoodType == null) {
+//                showToast("Please select a food type before proceeding.");
+//                return;
+//            }
             goToCheckoutWithChoice(selectedFoodType);
         });
     }
