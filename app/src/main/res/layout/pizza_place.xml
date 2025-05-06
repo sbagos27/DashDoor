@@ -12,21 +12,23 @@
         android:id="@+id/pizzaTime"
         android:layout_width="230dp"
         android:layout_height="64dp"
-        android:text="@string/pizza_time"
         android:gravity="center"
-        android:textSize="42sp"
-
+        android:text="Pizza Time!"
         android:textColor="#39FF14"
+
+        android:textSize="42sp"
         app:layout_constraintBottom_toTopOf="@+id/textView"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.798" />
 
     <Button
         android:id="@+id/pepperButton"
         android:layout_width="275dp"
         android:layout_height="92dp"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="292dp"
         android:background="#D92929"
         android:text="@string/pepperoni_15"
         android:textSize="32sp"

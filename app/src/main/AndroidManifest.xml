@@ -23,6 +23,7 @@
             android:name=".CheckoutActivity" />
         <activity android:name=".PizzaActivity"/>
         <activity android:name=".BurgerActivity"/>
+        <activity android:name=".AdminActivity"/>
         <activity
             android:name=".MainActivity"
             android:exported="true">
