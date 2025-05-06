@@ -1,5 +1,6 @@
 package com.example.DashDoor;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
@@ -25,20 +26,20 @@ public class OrderPageActivity extends AppCompatActivity {
         }
 
         orderPageBinding.buttonBurger.setOnClickListener(v -> {
-            selectedFoodType = "Burger Place";
-            showToast("Selected: Burger Place");
+            Intent intent = new Intent(this, BurgerActivity.class);
+            startActivity(intent);
         });
 
         orderPageBinding.buttonPizza.setOnClickListener(v -> {
-            selectedFoodType = "Pizza";
-            showToast("Selected: Pizza");
+            Intent intent = new Intent(this, PizzaActivity.class);
+            startActivity(intent);
         });
 
         orderPageBinding.placeOrderButton.setOnClickListener(v -> {
-            if (selectedFoodType == null) {
-                showToast("Please select a food type before proceeding.");
-                return;
-            }
+//            if (selectedFoodType == null) {
+//                showToast("Please select a food type before proceeding.");
+//                return;
+//            }
             goToCheckoutWithChoice(selectedFoodType);
         });
     }
@@ -52,5 +53,9 @@ public class OrderPageActivity extends AppCompatActivity {
 
     private void showToast(String message) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+    }
+
+    static Intent orderPageIntentFactory(Context context){
+        return new Intent(context, OrderPageActivity.class);
     }
 }

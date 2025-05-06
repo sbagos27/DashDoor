@@ -78,12 +78,14 @@ public class MainActivity extends AppCompatActivity {
 
         updateDisplay();
 
+
         binding.logButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 getInformationFromDisplay();
                 insertDashDoorRecord();
                 updateDisplay();
+                startActivity(OrderPageActivity.orderPageIntentFactory(getApplicationContext()));
             }
         });
         binding.LocationInputEditText.setOnClickListener(new View.OnClickListener() {
