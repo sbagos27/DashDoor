@@ -66,6 +66,43 @@ public class ExampleInstrumentedTest {
     }
 
 
+    /**
+     * Test to check if the Place Order button launches the CheckoutActivity.
+     * Andre Gutierrez
+     */
+    @Test
+    public void testPlaceOrderButtonLaunchesCheckoutActivity() {
+        ActivityScenario.launch(OrderPageActivity.class);
 
+        onView(withId(R.id.placeOrderButton)).perform(click());
+
+        intended(hasComponent(CheckoutActivity.class.getName()));
+    }
+
+    /**
+     * Test to check if the Admin login works.
+     * Andre Gutierrez
+     */
+    @Test
+    public void loginAsAdmin() {
+        Context context = InstrumentationRegistry.getInstrumentation().getTargetContext();
+        Intent intent = new Intent(context, LoginActivity.class);
+        intent.putExtra("username", "admin");
+        intent.putExtra("password", "admin");
+        ActivityScenario.launch(intent);
+    }
+
+    /**
+     * Test to check if the User login works.
+     * Andre Gutierrez
+     */
+    @Test
+    public void loginAsUser() {
+        Context context = InstrumentationRegistry.getInstrumentation().getTargetContext();
+        Intent intent = new Intent(context, LoginActivity.class);
+        intent.putExtra("username", "user");
+        intent.putExtra("password", "user");
+        ActivityScenario.launch(intent);
+    }
 
 }
