@@ -57,7 +57,7 @@ public class ExampleInstrumentedTest {
     }
 
     @Test
-    public void testPizzaButtonLaunchesBurgerActivity() {
+    public void testPizzaButtonLaunchesPizzaActivity() {
         ActivityScenario.launch(OrderPageActivity.class);
 
         onView(withId(R.id.buttonPizza)).perform(click());
@@ -65,6 +65,14 @@ public class ExampleInstrumentedTest {
         intended(hasComponent(PizzaActivity.class.getName()));
     }
 
+    @Test
+    public void testToCheckoutLaunchesCheckoutActivity(){
+        ActivityScenario.launch(OrderPageActivity.class);
+
+        onView(withId(R.id.placeOrderButton)).perform(click());
+
+        intended(hasComponent(CheckoutActivity.class.getName()));
+    }
 
 
 
