@@ -48,6 +48,10 @@ public class ExampleInstrumentedTest {
         Intents.release();
     }
 
+    /**
+     * checks to see if going to burger activity works
+     * Senen
+     */
     @Test
     public void testBurgerButtonLaunchesBurgerActivity() {
         ActivityScenario.launch(OrderPageActivity.class);
@@ -57,6 +61,10 @@ public class ExampleInstrumentedTest {
         intended(hasComponent(BurgerActivity.class.getName()));
     }
 
+    /**
+     * checks to see if going to pizza activity works
+     * Senen
+     */
     @Test
     public void testPizzaButtonLaunchesPizzaActivity() {
         ActivityScenario.launch(OrderPageActivity.class);
@@ -65,21 +73,10 @@ public class ExampleInstrumentedTest {
 
         intended(hasComponent(PizzaActivity.class.getName()));
     }
-    /**
-     *
-     */
-    @Test
-    public void testToCheckoutLaunchesCheckoutActivity(){
-        ActivityScenario.launch(OrderPageActivity.class);
-
-        onView(withId(R.id.placeOrderButton)).perform(click());
-
-        intended(hasComponent(CheckoutActivity.class.getName()));
-    }
 
     /**
      * Test to check if the Place Order button launches the CheckoutActivity.
-     * Andre Gutierrez
+     * Natalio
      */
     @Test
     public void testPlaceOrderButtonLaunchesCheckoutActivity() {
