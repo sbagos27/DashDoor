@@ -63,8 +63,8 @@ public abstract class DashDoorDatabase extends RoomDatabase {
                 admin.setAdmin(true);
                 dao.insert(admin);
 
-                User textUser1 = new User("testUser1", "testUser1");
-                dao.insert(textUser1);
+                User group6User = new User("group6_DD", "group6_DD");
+                dao.insert(group6User);
             });
         }
     };

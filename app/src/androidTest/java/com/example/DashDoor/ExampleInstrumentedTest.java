@@ -2,6 +2,7 @@ package com.example.DashDoor;
 
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
+import static androidx.test.espresso.action.ViewActions.typeText;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.intent.Intents.intended;
 import static androidx.test.espresso.intent.matcher.IntentMatchers.hasComponent;
@@ -64,7 +65,9 @@ public class ExampleInstrumentedTest {
 
         intended(hasComponent(PizzaActivity.class.getName()));
     }
-
+    /**
+     *
+     */
     @Test
     public void testToCheckoutLaunchesCheckoutActivity(){
         ActivityScenario.launch(OrderPageActivity.class);
@@ -74,6 +77,65 @@ public class ExampleInstrumentedTest {
         intended(hasComponent(CheckoutActivity.class.getName()));
     }
 
+    /**
+     * Test to check if the Place Order button launches the CheckoutActivity.
+     * Andre Gutierrez
+     */
+    @Test
+    public void testPlaceOrderButtonLaunchesCheckoutActivity() {
+        ActivityScenario.launch(OrderPageActivity.class);
+
+        onView(withId(R.id.placeOrderButton)).perform(click());
+
+        intended(hasComponent(CheckoutActivity.class.getName()));
+    }
+
+    /**
+     * Test to check if the Admin login works.
+     * Andre Gutierrez
+     */
+    @Test
+    public void loginAsAdmin() {
+        Context context = InstrumentationRegistry.getInstrumentation().getTargetContext();
+        Intent intent = new Intent(context, LoginActivity.class);
+        intent.putExtra("username", "admin");
+        intent.putExtra("password", "admin");
+        ActivityScenario.launch(intent);
+    }
+
+    /**
+     * Test to check if the User login works.
+     * Andre Gutierrez
+     */
+    @Test
+    public void loginAsUser() {
+        Context context = InstrumentationRegistry.getInstrumentation().getTargetContext();
+        Intent intent = new Intent(context, LoginActivity.class);
+        intent.putExtra("username", "user");
+        intent.putExtra("password", "user");
+        ActivityScenario.launch(intent);
+    }
+
+    /**
+     * testing admin login
+     * Rene
+     */
+    @Test
+    public void loginAdmin() {
+        ActivityScenario.launch(LoginActivity.class);
 
 
+        String username = "admin1";
+        String password = "admin1";
+
+        onView(withId(R.id.userNameLoginEditText))
+                .perform(typeText(username));
+
+        onView(withId(R.id.passwordLoginEditText))
+                .perform(typeText(password));
+
+        onView(withId(R.id.loginButton)).perform(click());
+
+        intended(hasComponent(MainActivity.class.getName()));
+    }
 }
