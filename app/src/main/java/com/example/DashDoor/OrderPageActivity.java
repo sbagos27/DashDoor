@@ -26,12 +26,12 @@ public class OrderPageActivity extends AppCompatActivity {
         }
 
         orderPageBinding.buttonBurger.setOnClickListener(v -> {
-            Intent intent = new Intent(this, BurgerActivity.class);
+            Intent intent = BurgerActivity.burgerIntentFactory(this);
             startActivity(intent);
         });
 
         orderPageBinding.buttonPizza.setOnClickListener(v -> {
-            Intent intent = new Intent(this, PizzaActivity.class);
+            Intent intent = PizzaActivity.pizzaIntentFactory(this);
             startActivity(intent);
         });
 
