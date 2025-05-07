@@ -2,6 +2,7 @@ package com.example.DashDoor;
 
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
+import static androidx.test.espresso.action.ViewActions.typeText;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.intent.Intents.intended;
 import static androidx.test.espresso.intent.matcher.IntentMatchers.hasComponent;
@@ -105,4 +106,26 @@ public class ExampleInstrumentedTest {
         ActivityScenario.launch(intent);
     }
 
+    /**
+     * testing admin login
+     * Rene
+     */
+    @Test
+    public void loginAdmin() {
+        ActivityScenario.launch(LoginActivity.class);
+
+
+        String username = "admin1";
+        String password = "admin1";
+
+        onView(withId(R.id.userNameLoginEditText))
+                .perform(typeText(username));
+
+        onView(withId(R.id.passwordLoginEditText))
+                .perform(typeText(password));
+
+        onView(withId(R.id.loginButton)).perform(click());
+
+        intended(hasComponent(MainActivity.class.getName()));
+    }
 }
