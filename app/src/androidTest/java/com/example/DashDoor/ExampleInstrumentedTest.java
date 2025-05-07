@@ -58,14 +58,24 @@ public class ExampleInstrumentedTest {
     }
 
     @Test
-    public void testPizzaButtonLaunchePizzaActivity() {
+    public void testPizzaButtonLaunchesPizzaActivity() {
         ActivityScenario.launch(OrderPageActivity.class);
 
         onView(withId(R.id.buttonPizza)).perform(click());
 
         intended(hasComponent(PizzaActivity.class.getName()));
     }
+    /**
+     *
+     */
+    @Test
+    public void testToCheckoutLaunchesCheckoutActivity(){
+        ActivityScenario.launch(OrderPageActivity.class);
 
+        onView(withId(R.id.placeOrderButton)).perform(click());
+
+        intended(hasComponent(CheckoutActivity.class.getName()));
+    }
 
     /**
      * Test to check if the Place Order button launches the CheckoutActivity.
